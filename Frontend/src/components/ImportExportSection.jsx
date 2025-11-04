@@ -7,12 +7,13 @@ const ImportExportSection = () => {
   const [message, setMessage] = useState("");
 
   // const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
-  //    const token = localStorage.getItem("token");
+     const token = localStorage.getItem("token");
   // ========== EXPORT ==========
   const handleExport = async () => {
       try {
       const res = await api.get(`/expenses/export?format=${format}`, {
-        responseType: "blob", // important for file downloads
+        responseType: "blob", 
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       const blob = new Blob([res.data]);

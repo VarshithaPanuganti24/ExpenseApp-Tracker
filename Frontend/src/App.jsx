@@ -22,44 +22,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
-  //const token = localStorage.getItem("token");
-  ///instead if two useeffect tyr promises if user changes token changes
-
-  // Fetch expenses from backend
-  // useEffect(() => {
-  //   if (!token) {
-  //     //and if not user
-  //     setLoading(false);
-  //     return;
-  //   } // skip if not logged in
-
-  //   const fetchExpenses = async () => {
-  //     try {
-  //       const res = await api.get("/expenses");
-  //       //to send userinfo sothst be can filter it
-  //       setExpenses(res.data);
-  //     } catch (err) {
-  //       console.error("Error fetching expenses:", err);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fetchExpenses();
-  // }, [token]);
-
-  // // Fetch income from backend
-  // useEffect(() => {
-  //   const fetchIncome = async () => {
-  //     try {
-  //       const res = await api.get("/income");
-  //       setIncome(res.data.amount);
-  //     } catch (err) {
-  //       console.error("Error fetching income:", err);
-  //     }
-  //   };
-  //   fetchIncome();
-  // }, []);
-  // Update income in backend
+  
   // 🔹 Keep localStorage in sync with token
   useEffect(() => {
     if (token) {
